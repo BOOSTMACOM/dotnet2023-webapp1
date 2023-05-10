@@ -2,6 +2,8 @@
 using Microsoft.Extensions.DependencyInjection;
 using WebApplication1.Data;
 using WebApplication1.Domain.Services;
+using WebApplication1.Repositories;
+using WebApplication1.Repositories.Interface;
 
 namespace WebApplication1
 {
@@ -16,6 +18,7 @@ namespace WebApplication1
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<MovieService>();
+            builder.Services.AddTransient<IMovieRepository, MovieRepository>();
 
             var app = builder.Build();
 

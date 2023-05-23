@@ -17,7 +17,7 @@ namespace WebApplication1.Repositories
                 throw new ArgumentNullException("");
             }
 
-            _dbSet.Add(movie);
+            _dbSet.Update(movie);
             _context.SaveChanges();
         }
 
